@@ -378,11 +378,17 @@ p {
 
 /* contact Section */
 #contact .contact {
+	background-image: url(./images/contact\ us1.jpg);
+	background-size: cover;
+	background-position: top center;
+	position: relative;
+	z-index: 1;	
 	flex-direction: column;
-	max-width: 1200px;
-	margin: 0 auto;
+	
+	margin: 100 auto;
 }
 #contact .contact-items {
+
 	width: 400px;
 }
 #contact .contact-item {

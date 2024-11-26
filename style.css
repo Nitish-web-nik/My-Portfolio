@@ -294,12 +294,21 @@ p {
 /* Services Section */
 
 #services .services {
-    flex-direction: column;
+    /* flex-direction: column;
     text-align: center;
     max-width: 1500px;
     margin: 0 auto;
     padding: 100px 0;
-    background-image: url(./images/img-2.jpg);
+    background-image: url(./images/img-2.jpg); */
+
+	background-image: url(./images/projects.jpg);
+	background-size: cover;
+	background-position: top center;
+	position: relative;
+	z-index: 1;	
+	flex-direction: column;
+	
+	margin: 100 auto;
 }
 
 #services .service-top {
@@ -387,21 +396,44 @@ p {
 
 /* About Section */
 #about .about {
-    flex-direction: column-reverse;
-    text-align: center;
+    background-image: url(./images/projects.jpg);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 100px 20px;
-    background-image: url(./images/img-2.jpg);
+    text-align: center;
+}
+
+#about .about::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: -1;
 }
 
 #about .col-left {
     width: 250px;
     height: 360px;
+    margin: 0 auto;
+    padding: 20px 0;
 }
 
 #about .col-right {
     width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 #about .col-right h2 {
@@ -409,15 +441,19 @@ p {
     font-weight: 500;
     letter-spacing: .2rem;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 #about .col-right p {
     margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.6;
 }
 
 #about .col-right a[href^="mailto"] {
     color: black;
     text-decoration: none;
+    display: inline-block;
 }
 
 #about .col-right a[href^="mailto"]:hover {
@@ -430,6 +466,7 @@ p {
     margin-bottom: 50px;
     padding: 10px 20px;
     font-size: 2rem;
+    display: inline-block;
 }
 
 #about .col-left .about-img {
@@ -437,6 +474,7 @@ p {
     width: 100%;
     position: relative;
     border: 10px solid white;
+    margin: 0 auto;
 }
 
 #about .col-left .about-img::after {
@@ -449,7 +487,33 @@ p {
     border: 7px solid crimson;
     z-index: -1;
 }
+
+/* Media Query for responsive design */
+@media screen and (min-width: 768px) {
+    #about .about {
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    #about .col-left {
+        margin: 0;
+        padding: 0 20px;
+    }
+
+    #about .col-right {
+        text-align: left;
+        padding: 0 20px;
+    }
+
+    #about .col-right p,
+    #about .col-right h2 {
+        text-align: left;
+    }
+}
+
 /* End About Section */
+
 
 
 /* contact Section */
